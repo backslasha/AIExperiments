@@ -29,6 +29,9 @@ public class GoBangBoard extends JPanel {
                 int y = e.getY();
                 int i = x / pieceSize;
                 int j = y / pieceSize;
+                if (mPieces[i][j] != EMPTY) {
+                    return;
+                }
                 drop(i, j);
                 if (onUserDropListener != null) {
                     onUserDropListener.OnUserDrop(i, j);

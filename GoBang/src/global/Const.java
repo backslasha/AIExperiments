@@ -45,4 +45,19 @@ public class Const {
     public static final String PATTERN_FOUR_DEAD_AAAAO = "AAAAO";
     public static final String PATTERN_FOUR_ALIVE_OAAAAO = "OAAAAO";
 
+    public static final int SCORE_TWO_DEAD_OOOAA = 150;
+    public static final int SCORE_THREE_DEAD_AAAOO = 500;
+    public static final int SCORE_THREE_DEAD_AAOOA = 600;
+    public static final int SCORE_THREE_DEAD_AOOAOAO = 800;
+    public static final int SCORE_FOUR_DEAD_OAAAA = 2500;
+    public static final int SCORE_FOUR_DEAD_AOAAA = 3000;
+
+
+    public static final String PATTERN_TWO_DEAD_OOOAA = "OOOAA";
+    public static final String PATTERN_THREE_DEAD_AAAOO = "AAAOO";
+    public static final String PATTERN_THREE_DEAD_AAOOA = "AAOOA";
+    public static final String PATTERN_THREE_DEAD_AOOAOAO = "AOOAOAO";
+    public static final String PATTERN_FOUR_DEAD_OAAAA = "OAAAA";
+    public static final String PATTERN_FOUR_DEAD_AOAAA = "AOAAA";
+
 }

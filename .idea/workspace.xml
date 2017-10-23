@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="65bea958-f2a3-49d5-9919-edc3f34f589d" name="Default" comment="" />
+    <list default="true" id="65bea958-f2a3-49d5-9919-edc3f34f589d" name="Default" comment="lose my dream">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/GoBang/AI$1.class" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GoBang/AI.class" afterPath="$PROJECT_DIR$/out/production/GoBang/AI.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/GoBang/global/Const.class" afterPath="$PROJECT_DIR$/out/production/GoBang/global/Const.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoBang/src/AI.java" afterPath="$PROJECT_DIR$/GoBang/src/AI.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoBang/src/GoBangBoard.java" afterPath="$PROJECT_DIR$/GoBang/src/GoBangBoard.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GoBang/src/global/Const.java" afterPath="$PROJECT_DIR$/GoBang/src/global/Const.java" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,8 +26,8 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoBang/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -28,8 +36,8 @@
       <file leaf-file-name="GoBangBoard.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoBang/src/GoBangBoard.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
+            <state relative-caret-position="216">
+              <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
               <folding>
                 <element signature="class#OnUserDropListener#0;class#GoBangBoard#0" expanded="false" />
                 <element signature="method#paintLines#0;class#GoBangBoard#0" expanded="false" />
@@ -40,36 +48,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AI.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AI.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GoBang/src/AI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1023">
-              <caret line="109" column="24" lean-forward="true" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+            <state relative-caret-position="769">
+              <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
               <folding>
-                <element signature="e#853#1230#0" expanded="false" />
-                <element signature="method#getPiecesStream#0;class#AI#0" expanded="false" />
-                <element signature="class#3191:3482" expanded="false" />
-                <element signature="method#accept#0;class#3191:3482" expanded="false" />
+                <element signature="e#974#1351#0" expanded="false" />
+                <element signature="e#1378#2046#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Object.java" pinned="false" current-in-tab="false">
-        <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk/src.zip!/java/lang/Object.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="62" column="33" lean-forward="false" selection-start-line="62" selection-start-column="33" selection-end-line="62" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Const.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Const.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GoBang/src/global/Const.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+            <state relative-caret-position="-537">
+              <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -106,6 +102,9 @@
       <replace>public</replace>
     </replaceStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -129,12 +128,12 @@
         <option value="$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ArrComparator.java" />
         <option value="$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ChessMap.java" />
         <option value="$PROJECT_DIR$/GoBang/src/Main.java" />
-        <option value="$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ChessPanel.java" />
-        <option value="$PROJECT_DIR$/GoBang/src/GoBangBoard.java" />
         <option value="$PROJECT_DIR$/GoBang/src/Referee.java" />
         <option value="$PROJECT_DIR$/GoBang/src/Const.java" />
-        <option value="$PROJECT_DIR$/GoBang/src/AI.java" />
+        <option value="$PROJECT_DIR$/GoBang/src/GoBangBoard.java" />
         <option value="$PROJECT_DIR$/GoBang/src/global/Const.java" />
+        <option value="$PROJECT_DIR$/GoBang/src/AI.java" />
+        <option value="$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ChessPanel.java" />
       </list>
     </option>
   </component>
@@ -144,6 +143,7 @@
     <option name="width" value="1024" />
     <option name="height" value="529" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <flattenPackages />
@@ -180,6 +180,10 @@
               <item name="GoBang" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="global" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="AIExperiments" type="b2602c69:ProjectViewProjectNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -307,18 +311,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-38" width="1368" height="807" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32914925" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.35425383" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3539326" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32775453" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -328,7 +331,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39748955" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3974719" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -340,6 +343,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lose my dream" />
+    <option name="LAST_COMMIT_MESSAGE" value="lose my dream" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -356,20 +363,8 @@
           <properties />
           <option name="timeStamp" value="18" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/GoBang/src/AI.java</url>
-          <line>76</line>
-          <properties />
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/GoBang/src/AI.java</url>
-          <line>78</line>
-          <properties />
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="25" />
+      <option name="time" value="47" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -389,8 +384,8 @@
           <folding>
             <element signature="method#paintLines#0;class#GoBangBoard#0" expanded="false" />
             <element signature="method#paintPieces#0;class#GoBangBoard#0" expanded="false" />
-            <element signature="e#3191#3192#0" expanded="false" />
-            <element signature="e#3225#3226#0" expanded="false" />
+            <element signature="e#3283#3284#0" expanded="false" />
+            <element signature="e#3317#3318#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -543,67 +538,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ChessPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="404" column="43" lean-forward="false" selection-start-line="404" selection-start-column="43" selection-end-line="404" selection-end-column="43" />
-          <folding>
-            <element signature="method#ChessPanel#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#ChessPanel#1;class#ChessPanel#0" expanded="false" />
-            <element signature="method#reset#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#showMousePos#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#getPoint#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#paint#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#paintChessMap#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#paintChess#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#putOne#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#6848#6869#0" expanded="false" />
-            <element signature="e#7268#7300#0" expanded="false" />
-            <element signature="method#findMax#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#findMin#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#getBests#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#13145#13157#0" expanded="false" />
-            <element signature="e#15392#15418#0" expanded="false" />
-            <element signature="method#makesense#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#17799#17881#0" expanded="false" />
-            <element signature="method#update#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#22776#22858#0" expanded="false" />
-            <element signature="method#resetMaxMin#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#23267#23346#0" expanded="false" />
-            <element signature="method#randomTest#0;class#ChessPanel#0" expanded="false" />
-            <element signature="e#24368#24464#0" expanded="false" />
-            <element signature="method#haveWin#0;class#ChessPanel#0" expanded="false" />
-            <element signature="method#wined#0;class#ChessPanel#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GoBang/src/Referee.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="214">
           <caret line="23" column="39" lean-forward="true" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GoBang/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GoBang/src/GoBangBoard.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="40" column="18" lean-forward="true" selection-start-line="40" selection-start-column="18" selection-end-line="40" selection-end-column="18" />
-          <folding>
-            <element signature="class#OnUserDropListener#0;class#GoBangBoard#0" expanded="false" />
-            <element signature="method#paintLines#0;class#GoBangBoard#0" expanded="false" />
-            <element signature="method#setOnUserDropListener#0;class#GoBangBoard#0" expanded="false" />
-            <element signature="method#updatePieces#0;class#GoBangBoard#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -615,24 +554,74 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GoBang/src/AI.java">
+    <entry file="file://$PROJECT_DIR$/GoBang/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1023">
-          <caret line="109" column="24" lean-forward="true" selection-start-line="109" selection-start-column="24" selection-end-line="109" selection-end-column="24" />
+        <state relative-caret-position="270">
+          <caret line="15" column="49" lean-forward="true" selection-start-line="15" selection-start-column="15" selection-end-line="15" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoBang/src/GoBangBoard.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="57" column="5" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="5" />
           <folding>
-            <element signature="e#853#1230#0" expanded="false" />
-            <element signature="method#getPiecesStream#0;class#AI#0" expanded="false" />
-            <element signature="class#3191:3482" expanded="false" />
-            <element signature="method#accept#0;class#3191:3482" expanded="false" />
+            <element signature="class#OnUserDropListener#0;class#GoBangBoard#0" expanded="false" />
+            <element signature="method#paintLines#0;class#GoBangBoard#0" expanded="false" />
+            <element signature="method#setOnUserDropListener#0;class#GoBangBoard#0" expanded="false" />
+            <element signature="method#updatePieces#0;class#GoBangBoard#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/GoBang/src/global/Const.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        <state relative-caret-position="-537">
+          <caret line="17" column="45" lean-forward="true" selection-start-line="17" selection-start-column="45" selection-end-line="17" selection-end-column="45" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/ChessPanel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="734" column="33" lean-forward="true" selection-start-line="734" selection-start-column="33" selection-end-line="734" selection-end-column="33" />
+          <folding>
+            <element signature="method#ChessPanel#1;class#ChessPanel#0" expanded="false" />
+            <element signature="method#showMousePos#0;class#ChessPanel#0" expanded="false" />
+            <element signature="method#getPoint#0;class#ChessPanel#0" expanded="false" />
+            <element signature="method#paint#0;class#ChessPanel#0" expanded="false" />
+            <element signature="method#paintChessMap#0;class#ChessPanel#0" expanded="false" />
+            <element signature="method#paintChess#0;class#ChessPanel#0" expanded="false" />
+            <element signature="e#5635#5656#0" expanded="false" />
+            <element signature="e#6026#6058#0" expanded="false" />
+            <element signature="e#11319#11331#0" expanded="false" />
+            <element signature="e#13309#13335#0" expanded="false" />
+            <element signature="method#makesense#0;class#ChessPanel#0" expanded="false" />
+            <element signature="e#15454#15536#0" expanded="false" />
+            <element signature="method#update#0;class#ChessPanel#0" expanded="false" />
+            <element signature="e#20057#20139#0" expanded="false" />
+            <element signature="method#resetMaxMin#0;class#ChessPanel#0" expanded="false" />
+            <element signature="e#20455#20534#0" expanded="false" />
+            <element signature="method#randomTest#0;class#ChessPanel#0" expanded="false" />
+            <element signature="e#21378#21474#0" expanded="false" />
+            <element signature="e#22685#22686#0" expanded="true" />
+            <element signature="e#22718#22719#0" expanded="true" />
+            <element signature="e#22751#22752#0" expanded="true" />
+            <element signature="e#22773#22774#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GoBang/src/AI.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="769">
+          <caret line="84" column="62" lean-forward="true" selection-start-line="84" selection-start-column="62" selection-end-line="84" selection-end-column="62" />
+          <folding>
+            <element signature="e#974#1351#0" expanded="false" />
+            <element signature="e#1378#2046#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
