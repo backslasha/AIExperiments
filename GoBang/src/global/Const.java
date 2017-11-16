@@ -1,5 +1,8 @@
 package global;
 
+import java.util.Arrays;
+import java.util.function.Consumer;
+
 public class Const {
     public static final int TOP = 1;
     public static final int BOTTOM = 2;
@@ -60,4 +63,36 @@ public class Const {
     public static final String PATTERN_FOUR_DEAD_OAAAA = "OAAAA";
     public static final String PATTERN_FOUR_DEAD_AOAAA = "AOAAA";
 
+
+    public static void main(String[] args) {
+        int[][] pieces = new int[5][5];
+        int[][] imagenaryPieces = pieces.clone();
+        Arrays.stream(imagenaryPieces).forEach(ints -> {
+            for (int i = 0; i < ints.length; i++) {
+                ints[i] = 3;
+            }
+        });
+        Arrays.stream(pieces).forEach(ints -> {
+            for (int i = 0; i < ints.length; i++) {
+                System.out.print(ints[i]);
+                if (i == ints.length - 1) {
+                    System.out.println();
+                }
+            }
+        });
+
+        if (pieces[0] == imagenaryPieces[0]) {
+            System.out.println("shit");
+        }
+
+        int[] test = new int[10];
+        int[] copyOfTest = test.clone();
+        for (int i = 0; i < copyOfTest.length; i++) {
+            copyOfTest[i]= 55;
+        }
+        for (int i = 0; i < test.length; i++) {
+            System.out.print(test[i]);
+        }
+
+    }
 }

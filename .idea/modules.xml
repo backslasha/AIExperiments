@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/src/AIExperiments.iml" filepath="$PROJECT_DIR$/src/AIExperiments.iml" />
       <module fileurl="file://$PROJECT_DIR$/GoBang/GoBang.iml" filepath="$PROJECT_DIR$/GoBang/GoBang.iml" />
       <module fileurl="file://$PROJECT_DIR$/RobotAndMaze/RobotAndMaze.iml" filepath="$PROJECT_DIR$/RobotAndMaze/RobotAndMaze.iml" />
-      <module fileurl="file://$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/chess.iml" filepath="$USER_HOME$/Documents/LocalDocuments/人工智能实验/AI实验5/ab剪枝之五子棋游戏/chess/src/chess.iml" />
     </modules>
   </component>
 </project>

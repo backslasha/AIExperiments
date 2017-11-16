@@ -1,13 +1,14 @@
+package widget;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.util.Arrays;
 
 public class GoBangBoard extends JPanel {
     public static final int N = 15;
-    public static final int BLACK_ONE = 9;
-    public static final int WHITE_ONE = 1;
+    public static final int BLACK = 9;
+    public static final int WHITE = 1;
     public static final int EMPTY = 0;
     private ImageIcon blackPiece, whitePiece; //位图
     private int[][] mPieces;
@@ -15,28 +16,52 @@ public class GoBangBoard extends JPanel {
     private int piecesCount = 0;
     private boolean BlackSTurn = false;
     private Point lastDrop = new Point(-1, -1);
-    private OnUserDropListener onUserDropListener;
+    private OnDropListener onDropListener;
 
-    public interface OnUserDropListener {
-        void OnUserDrop(int i, int j);
+    private OnHoverListener onHoverListener;
+
+    public void setGameGover(boolean gameGover) {
+        this.gameGover = gameGover;
     }
 
-    GoBangBoard() {
+    public void setOnRightClickListener(OnHoverListener onHoverListener) {
+        this.onHoverListener = onHoverListener;
+    }
+
+    private boolean gameGover = false;
+
+    public interface OnDropListener {
+        void onDrop(int i, int j, int color, boolean dropByAI);
+    }
+
+    public interface OnHoverListener {
+        void onMouseHovering(int i, int j);
+    }
+
+    public GoBangBoard() {
         MouseAdapter mouseAdapter = new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
                 int x = e.getX();
                 int y = e.getY();
-                int i = x / pieceSize;
-                int j = y / pieceSize;
-                if (mPieces[i][j] != EMPTY) {
-                    return;
+                int i = y / pieceSize;
+                int j = x / pieceSize;
+
+                if (e.getButton() == MouseEvent.BUTTON3) {
+                    if (onHoverListener != null) {
+                        onHoverListener.onMouseHovering(j, i);
+                    }
+                } else {
+                    if (mPieces[i][j] != EMPTY) {
+                        return;
+                    }
+                    if (!gameGover) {
+                        drop(i, j, false);
+                    }
                 }
-                drop(i, j);
-                if (onUserDropListener != null) {
-                    onUserDropListener.OnUserDrop(i, j);
-                }
+
             }
+
         };
         blackPiece = new ImageIcon(getClass().getResource("/images/blackPiece.jpg"));
         whitePiece = new ImageIcon(getClass().getResource("/images/whitePiece.jpg"));
@@ -45,15 +70,18 @@ public class GoBangBoard extends JPanel {
         addMouseListener(mouseAdapter);
     }
 
-    public void drop(int i, int j) {
+    public void drop(int i, int j, boolean dropByAI) {
         if (mPieces[i][j] != EMPTY) {
             return;
         }
         lastDrop.x = i;
         lastDrop.y = j;
         piecesCount++;
-        mPieces[i][j] = BlackSTurn ? BLACK_ONE : WHITE_ONE;
+        mPieces[i][j] = BlackSTurn ? BLACK : WHITE;
         BlackSTurn = !BlackSTurn;
+        if (onDropListener != null) {
+            onDropListener.onDrop(i, j, BlackSTurn ? WHITE : BLACK, dropByAI);
+        }
         repaint();
     }
 
@@ -84,10 +112,10 @@ public class GoBangBoard extends JPanel {
         int i, j;
         for (i = 0; i < N; i++)
             for (j = 0; j < N; j++) {
-                if (mPieces[i][j] == BLACK_ONE) {
-                    blackPiece.paintIcon(this, g, pieceSize * i, pieceSize * j);
-                } else if (mPieces[i][j] == WHITE_ONE) {
-                    whitePiece.paintIcon(this, g, pieceSize * i, pieceSize * j);
+                if (mPieces[i][j] == BLACK) {
+                    blackPiece.paintIcon(this, g, pieceSize * j, pieceSize * i);
+                } else if (mPieces[i][j] == WHITE) {
+                    whitePiece.paintIcon(this, g, pieceSize * j, pieceSize * i);
                 }
             }
     }
@@ -96,8 +124,8 @@ public class GoBangBoard extends JPanel {
         return mPieces;
     }
 
-    public void setOnUserDropListener(OnUserDropListener onUserDropListener) {
-        this.onUserDropListener = onUserDropListener;
+    public void setOnDropListener(OnDropListener onDropListener) {
+        this.onDropListener = onDropListener;
     }
 
     public void updatePieces(int[][] pieces) {

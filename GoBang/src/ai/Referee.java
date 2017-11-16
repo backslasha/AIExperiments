@@ -1,3 +1,7 @@
+package ai;
+
+import widget.GoBangBoard;
+
 public class Referee {
     private int[][] pieces;
     private GoBangBoard board;
@@ -5,7 +9,6 @@ public class Referee {
     public Referee(GoBangBoard board) {
         this.board = board;
         this.pieces = board.getPieces();
-
     }
 
     public boolean gameOver(int i, int j) {

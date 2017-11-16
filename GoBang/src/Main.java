@@ -1,3 +1,7 @@
+import ai.AI;
+import ai.Referee;
+import widget.GoBangBoard;
+
 import javax.swing.*;
 
 
@@ -6,16 +10,21 @@ public class Main {
         GoBangBoard goBangBoard = new GoBangBoard();
         AI ai = new AI(goBangBoard);
         Referee referee = new Referee(goBangBoard);
-        goBangBoard.setOnUserDropListener((i,j)->{
+        goBangBoard.setOnDropListener((i, j, color, dropByAI) -> {
             if (referee.gameOver(i, j)) {
-                System.out.println("User Won!");
+                System.out.println((color == 1 ? "WHITE" : "BLACK") + " Won!");
+                goBangBoard.setGameGover(true);
                 return;
             }
-            ai.drop();
-            if (referee.gameOver(i, j)) {
-                System.out.println("User Lost!");
+            if (!dropByAI) {
+                ai.drop();
             }
         });
+
+
+//        goBangBoard.setOnRightClickListener((i, j) -> {
+//            System.out.println("evaluate: "+ai.evaluateWhiteScores(new Point(i, j)));
+//        });
 
 
         JFrame jFrame = new JFrame();
@@ -26,9 +35,7 @@ public class Main {
         jFrame.pack();
         jFrame.setVisible(true);
 
-
-
-
     }
+
 }
 
