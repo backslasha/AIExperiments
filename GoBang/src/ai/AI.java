@@ -8,6 +8,9 @@ import java.util.LinkedHashMap;
 import java.util.function.Consumer;
 
 import static global.Const.*;
+import static widget.GoBangBoard.BLACK;
+import static widget.GoBangBoard.EMPTY;
+import static widget.GoBangBoard.WHITE;
 
 /**
  * ai.AI 固定黑手，用数字 9 表示
@@ -19,7 +22,7 @@ public class AI {
     private LinkedHashMap<String, Integer> map;
     private Class constClass = null;
     private int N;
-    private int pieceType = GoBangBoard.BLACK;
+    private int pieceType = BLACK;
 
 
     public AI(GoBangBoard board) {
@@ -40,139 +43,88 @@ public class AI {
     }
 
     public void drop() {
-        Point point = hesitate();
+        Point point;
+        if (GoBangEvaluator.evaluate(pieces) > 0) {
+            point = hesitate(BLACK);
+        } else {
+            point = hesitate(WHITE);
+        }
         board.drop(point.x, point.y, true);
     }
 
-    private Point hesitate() {
-        Point temp = new Point(), result = new Point();
-        int[][] imagenaryPieces = new int[15][15];
+    private Point hesitate(int pieceType) {
+        boolean attack = pieceType != BLACK;
+        Point center = new Point(), result = new Point();
+        int[][] imaginaryPieces = new int[15][15];
         for (int i = 0; i < pieces.length; i++) {
             for (int j = 0; j < pieces[i].length; j++) {
-                imagenaryPieces[i][j] = pieces[i][j];
+                imaginaryPieces[i][j] = pieces[i][j];
             }
         }
 
-        imagenaryPieces[0][0] = pieceType;
-        int value = evaluate(temp, pieceType, imagenaryPieces);
-        imagenaryPieces[0][0] = GoBangBoard.EMPTY;
+        imaginaryPieces[0][0] = BLACK;
+        int value = evaluate(center, pieceType, imaginaryPieces);
+        imaginaryPieces[0][0] = EMPTY;
 
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                if (GoBangBoard.EMPTY == pieces[i][j]) {
-                    imagenaryPieces[i][j] = pieceType;
-                    temp.x = i;
-                    temp.y = j;
-                    int s = evaluate(temp, pieceType, imagenaryPieces);
-                    if (s > value) {
-                        result.x = temp.x;
-                        result.y = temp.y;
-                        value = s;
+                if (EMPTY == pieces[i][j]) {
+                    imaginaryPieces[i][j] = BLACK;
+                    center.x = i;
+                    center.y = j;
+                    int s = evaluate(center, pieceType, imaginaryPieces);
+                    s += terrainBonus(i, j);
+                    if (attack) {
+                        if (s > value) {
+                            result.x = center.x;
+                            result.y = center.y;
+                            value = s;
+                        }
+                    } else {
+                        if (s < value) {
+                            result.x = center.x;
+                            result.y = center.y;
+                            value = s;
+                        }
                     }
-                    imagenaryPieces[i][j] = GoBangBoard.EMPTY;
+                    imaginaryPieces[i][j] = EMPTY;
                 }
             }
         }
         System.out.println(result.x + "," + result.y + ": " + value);
         return result;
     }
+    private static int terrainBonus(int i, int j) {
+        return 8 - Math.max(Math.abs(i - 8), Math.abs(j - 8));
+    }
 
     private int evaluate(Point point, int type, int[][] pieces) {
         int value = 0;
-
         for (int direction = VERTICAL; direction <= DIAGONAL; direction++) {
             String sample = getPiecesStreamByOrietation(direction, point, pieces);
-            for (int j = 0; j < 4; j++) {
+            sample = sample.replaceAll(String.valueOf(pieceType), "x");
+            for (int j = 0; j < 5; j++) {
                 int counter = 0;
                 int beginIndex = j;
-                int endIndex = j + 6;
+                int endIndex = j + 5;
                 if (beginIndex > sample.length() - 1) beginIndex = sample.length() - 1;
                 if (endIndex > sample.length()) endIndex = sample.length();
                 String near = sample.substring(beginIndex, endIndex);
                 if (near.contains(String.valueOf("1"))) {
                     continue;
                 }
-                if (near.contains("99999")) {
-                    counter += 50000;
-                } else if (near.contains("099990")) {
-                    counter += 4320;
-                } else if (near.contains("099900")) {
-                    counter += 720;
-                } else if (near.contains("009990")) {
-                    counter += 720;
-                } else if (near.contains("099090")) {
-                    counter += 720;
-                } else if (near.contains("090990")) {
-                    counter += 720;
-                } else if (near.contains("99990")) {
-                    counter += 720;
-                } else if (near.contains("09999")) {
-                    counter += 720;
-                } else if (near.contains("90999")) {
-                    counter += 720;
-                } else if (near.contains("99909")) {
-                    counter += 720;
-                } else if (near.contains("99099")) {
-                    counter += 720;
-                } else if (near.contains("009900")) {
-                    counter += 120;
-                } else if (near.contains("009090")) {
-                    counter += 120;
-                } else if (near.contains("090900")) {
-                    counter += 120;
-                } else if (near.contains("000900")) {
-                    counter += 20;
-                } else if (near.contains("009000")) {
-                    counter += 20;
-                }
-                value += counter;
-            }
-        }
-        // 计算对方上次落子的点周围造成的威胁
-        for (int direction = VERTICAL; direction <= DIAGONAL; direction++) {
-            String sample = getPiecesStreamByOrietation(direction, board.getLastDrop(), pieces);
-            for (int j = 0; j < 4; j++) {
-                int counter = 0;
-                int beginIndex = j;
-                int endIndex = j + 6;
-                if (beginIndex > sample.length() - 1) beginIndex = sample.length() - 1;
-                if (endIndex > sample.length()) endIndex = sample.length();
-                String near = sample.substring(beginIndex, endIndex);
-                if (near.contains(String.valueOf("9"))) {
-                    continue;
-                }
-                if (near.contains("11111")) {
-                    counter -= 100000;
-                } else if (near.contains("011110")) {
-                    counter -= 49999;
-                } else if (near.contains("11110")) {
-                    counter -= 27200;
-                } else if (near.contains("01111")) {
-                    counter -= 27200;
-                } else if (near.contains("10111")) {
-                    counter -= 27200;
-                } else if (near.contains("11101")) {
-                    counter -= 27200;
-                } else if (near.contains("11011")) {
-                    counter -= 27200;
-                } else if (near.contains("011100")) {
-                    counter -= 2720;
-                } else if (near.contains("001110")) {
-                    counter -= 2720;
-                } else if (near.contains("011010")) {
-                    counter -= 2720;
-                } else if (near.contains("010110")) {
-                    counter -= 2720;
-                } else if (near.contains("001100")) {
-                    counter -= 120;
-                } else if (near.contains("001010")) {
-                    counter -= 120;
-                } else if (near.contains("010100")) {
-                    counter -= 120;
-                } else if (near.contains("000100")) {
-                    counter -= 20;
-                } else if (near.contains("001000")) {
-                    counter -= 20;
+                if (near.contains("xxxxx")) {
+                    counter += 10000;
+                } else if (near.contains("xxxx")) {
+                    counter += 1000;
+                } else if (near.contains("xxx")) {
+                    counter += 300;
+                } else if (near.contains("xx")) {
+                    counter += 50;
+                } else if (near.contains("x")) {
+                    counter += 5;
+                } else {
+                    counter += 0;
                 }
                 value += counter;
             }
@@ -361,7 +313,7 @@ public class AI {
                     public void accept(int[] ints) {
                         for (int i = 0; i < ints.length; i++) {
                             if (Math.random() > 0.6) {
-                                ints[i] = GoBangBoard.BLACK;
+                                ints[i] = BLACK;
                             }
                             if (Math.random() > 0.75) {
                                 ints[i] = GoBangBoard.WHITE;
@@ -387,7 +339,7 @@ public class AI {
         int y = (int) (Math.random() * 15);
 //        System.out.println(x + "," + y + " : " + ai.getPiecesStreamByOrietation(12, new Point(x, y), test));
         System.out.println("\nif draw at " + x + "," + y + ", " + "the value is " +
-                ai.evaluate(new Point(x, y), GoBangBoard.BLACK, test));
+                ai.evaluate(new Point(x, y), BLACK, test));
 
 
     }

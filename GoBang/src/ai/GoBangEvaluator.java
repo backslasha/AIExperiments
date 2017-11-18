@@ -79,9 +79,6 @@ public class GoBangEvaluator {
         return result;
     }
 
-    private static int terrainBonus(int i, int j) {
-        return 8 - Math.max(Math.abs(i - 8), Math.abs(j - 8));
-    }
 
     public static int evaluate(int[][] pieces) {
         int value = 0;
@@ -122,7 +119,7 @@ public class GoBangEvaluator {
                 oValue = Math.max(oValue, evaluateLine(piecesStr, WHITE));
             }
         }
-        System.out.println("value:" + value + ",oValue:" + oValue);
+//        System.out.println("value:" + value + ",oValue:" + oValue);
         return value - oValue;
     }
 
