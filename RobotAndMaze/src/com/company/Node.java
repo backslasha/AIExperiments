@@ -1,18 +1,17 @@
 package com.company;
 
-public class Point {
+public class Node {
     private int x, y;
-    private int f;
-    private Point parent;
+    private Node parent;
     private boolean isObstacle;
 
-    public Point(int x, int y, boolean isObstacle) {
+    public Node(int x, int y, boolean isObstacle) {
         this.x = x;
         this.y = y;
         this.isObstacle = isObstacle;
     }
 
-    public Point(int x, int y) {
+    public Node(int x, int y) {
         this.x = x;
         this.y = y;
     }
@@ -28,11 +27,11 @@ public class Point {
     }
 
 
-    public void setParent(Point parent) {
+    public void setParent(Node parent) {
         this.parent = parent;
     }
 
-    public Point getParent() {
+    public Node getParent() {
         return parent;
     }
 
@@ -46,10 +45,10 @@ public class Point {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Point point = (Point) o;
+        Node node = (Node) o;
 
-        if (x != point.x) return false;
-        return y == point.y;
+        if (x != node.x) return false;
+        return y == node.y;
     }
 
     @Override
@@ -59,17 +58,9 @@ public class Point {
         return result;
     }
 
-    public int getF() {
-        return f;
-    }
-
-    public void setF(int f) {
-        this.f = f;
-    }
-
     @Override
     public String toString() {
-        return "Point{" +
+        return "Node{" +
                 "x=" + x +
                 ", y=" + y +
                 '}';

@@ -3,40 +3,49 @@ package com.company;
 import java.util.LinkedList;
 
 public class Maze {
+    // 表示地形的一个字符串，空心方块表示空位，黑心方块表示障碍物
     public static String terrain;
-    private int cols, rows;
-    private Point start, end;
 
-    public Point[][] getPoints() {
-        return points;
+    // 行、列
+    private int cols, rows;
+
+    // 起点和终点
+    private Node start, end;
+
+    // 地图矩阵
+    private Node[][] nodes;
+
+    public Node[][] getNodes() {
+        return nodes;
     }
 
-    private Point[][] points;
-
-    public Point getStart() {
+    public Node getStart() {
         return start;
     }
 
-    public Point getEnd() {
+    public Node getEnd() {
         return end;
     }
 
     public Maze(int rows,int cols) {
         this.cols = cols;
         this.rows = rows;
-        points = new Point[rows][cols];
-        initGraph(points, getTerrain());
+        nodes = new Node[rows][cols];
+        initGraph(nodes, getTerrain());
     }
 
+    /**
+     * 规则打印出地图
+     */
     public void printGraph() {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
 
-                if (points[i][j].equals(end)) {
+                if (nodes[i][j].equals(end)) {
                     System.out.printf("❤ ");
-                } else if (points[i][j].equals(start)) {
+                } else if (nodes[i][j].equals(start)) {
                     System.out.printf("✫ ");
-                } else if (points[i][j].isObstacle()) {
+                } else if (nodes[i][j].isObstacle()) {
                     System.out.printf("■ ");
                 } else {
                     System.out.printf("□ ");
@@ -47,20 +56,24 @@ public class Maze {
         System.out.println();
     }
 
-    public void printSolution(LinkedList<Point> solution) {
+    /**
+     * 规则打印出显示了解决方案的地图
+     * @param solution 解决方案，就是一个路径点的集合，从起点到终点的最佳路径
+     */
+    public void printSolution(LinkedList<Node> solution) {
         if (solution == null) {
             System.out.println("no solution!");
             return;
         }
-        for (int i = 0; i < points.length; i++) {
-            for (int j = 0; j < points[i].length; j++) {
-                if (points[i][j].equals(start)) {
+        for (int i = 0; i < nodes.length; i++) {
+            for (int j = 0; j < nodes[i].length; j++) {
+                if (nodes[i][j].equals(start)) {
                     System.out.printf("✫ ");
-                } else if (points[i][j].equals(end)) {
+                } else if (nodes[i][j].equals(end)) {
                     System.out.printf("❤ ");
-                } else if (solution.contains(points[i][j])) {
+                } else if (solution.contains(nodes[i][j])) {
                     System.out.printf("✫ ");
-                } else if (points[i][j].isObstacle()) {
+                } else if (nodes[i][j].isObstacle()) {
                     System.out.printf("■ ");
                 } else {
                     System.out.printf("□ ");
@@ -70,23 +83,32 @@ public class Maze {
         }
     }
 
-    private void initGraph(Point[][] points, char[][] obstacleRef) {
+    /**
+     * 初始化地图
+     * @param nodes 地图点集合
+     * @param obstacleRef 指示障碍物的位置的数组
+     */
+    private void initGraph(Node[][] nodes, char[][] obstacleRef) {
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                points[i][j] = new Point(
+                nodes[i][j] = new Node(
                         i, j,
                         obstacleRef[i][j] == '■'
                 );
                 if (obstacleRef[i][j] == '✫') {
-                    start = points[i][j];
+                    start = nodes[i][j];
                 }
                 if (obstacleRef[i][j] == '❤') {
-                    end = points[i][j];
+                    end = nodes[i][j];
                 }
             }
         }
     }
 
+    /**
+     * 获取地图情况
+     * @return 代表地图情况的二维字符数组，空心方块表示空位，黑心方块表示障碍物
+     */
     private char[][] getTerrain() {
         final char[][] terrainChars = new char[rows][cols];
         terrain = terrain.replaceAll("\\s", "");
