@@ -29,7 +29,7 @@ public class Entry {
             {"黑", "小", "光滑", "不危险"}};
 
     public static void main(String[] args) {
-        String[][] sample = Entry.sample1;
+        String[][] sample = Entry.sample;
 
         PolicyTreeBoard policyTreeBoard = new PolicyTreeBoard(
                 ID3.buildPolicyTree(sample)

@@ -26,7 +26,7 @@ public class Entry {
             } else {
                 JOptionPane.showMessageDialog(
                         jFrame,
-                        TicTacToe.TICK_NAME + "：ↀωↀ" + "\n" + TicTacToe.CROSS_NAME + "：∑(°□°)!!什么鬼",
+                        TicTacToe.TICK_NAME + "：ↀωↀ" + "\n" + TicTacToe.CROSS_NAME + "：∑(°□°)!!",
                         "平局!",
                         JOptionPane.INFORMATION_MESSAGE);
             }
